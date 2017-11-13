@@ -1,0 +1,31 @@
+extends layout
+
+block content
+
+  ul.nav.nav-tabs.mb-3
+    li.nav-item
+      a.nav-link.active(href="/") Home
+    li.nav-item
+      a.nav-link.disabled(href="#") Edit&nbsp;
+        span#book-name-nav= bookList.name
+
+  h1#book-name-h1= bookList.name
+
+  div.info-box
+    div.alert.alert-danger(role="alert") Invalid updating Book
+    div.alert.alert-success(role="alert") Book was updated
+
+  form.book-update
+    div.form-group
+      label.bmd-label-floating(for="book-name") Book
+      input.form-control#book-name(type="text", name="name", required="required", value= bookList.name)
+    div.form-group
+      label.bmd-label-floating(for="book-author") Author
+      input.form-control#book-author(type="text", name="author", required="required", value= bookList.author)
+    div.form-group
+      label.bmd-label-floating(for="book-created") Date created
+      input.form-control#book-created(type="text", name="bookCreated", required="required", value= bookList.bookCreated)
+    input(type="hidden", name="numHash", value= bookList.numHash)
+    button.btn.btn-default(type="reset") Cancel
+    button.btn.btn-primary.btn-raised(type="submit") Update book
+    a.float-right.btn.btn-raised.btn-primary(href="/") Go Home

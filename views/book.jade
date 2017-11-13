@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  h1= title
+
+  div.info-box
+    div.alert.alert-danger(role="alert") Invalid adding Book
+    div.alert.alert-success(role="alert") Book was added
+
+  form.book-add.mb-5
+    div.form-group
+      label.bmd-label-floating(for="book-name") Book
+      input.form-control#book-name(type="text", name="name", required="required", value= name)
+    div.form-group
+      label.bmd-label-floating(for="book-author") Author
+      input.form-control#book-author(type="text", name="author", required="required", value= author)
+    div.form-group
+      label.bmd-label-floating(for="book-created") Date created
+      input.form-control#book-created(type="text", name="bookCreated", required="required", value= bookCreated)
+    button.btn.btn-default(type="reset") Cancel
+    button.btn.btn-primary.btn-raised(type="submit") Add book
+
+  table.table.book-list
+    thead.thead-inverse
+      tr
+        th Name
+        th Author
+        th Date Created
+        th
+    tbody
+      for book in bookList
+        tr
+          td= book.name
+          td= book.author
+          td= book.bookCreated
+          td
+            a.mr-4(href="/book/#{book.numHash}")
+              i.fa.fa-pencil(aria-hidden="true")
+            a.glyphicon.glyphicon-remove(href="/book/delete/#{book.numHash}", data-delete="#{book.numHash}")
+              i.fa.fa-times(aria-hidden="true")
+
+  script#tdBookTmpl(type="text/x-jsrender").
+    <tr>
+      <td>{{:name}}</td>
+      <td>{{:author}}</td>
+      <td>{{:bookCreated}}</td>
+      <td class="icons-block">
+        <a href="/book/{{:numHash}}" class="mr-4" data-edit="{{:numHash}}">
+          <i aria-hidden="true" class="fa fa-pencil"></i>
+        </a>
+        <a class="glyphicon glyphicon-remove" href="/book/delete/{{:numHash}}" data-delete="{{:numHash}}">
+          <i aria-hidden="true" class="fa fa-times"></i>
+        </a>
+      </td>
+    </tr>

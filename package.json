@@ -1,0 +1,44 @@
+{
+  "name": "nodebooks",
+  "version": "1.0.0",
+  "description": "Node.js with Express, Redis, Supertest, ES2015 test work",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=test mocha -w app.js test.js"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "Redis",
+    "Supertest",
+    "ES2015",
+    "Jade",
+    "SASS"
+  ],
+  "author": "Alkri",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "bootstrap": "^3.3.7",
+    "bootstrap-material-design": "^4.0.0-beta.4",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "^4.16.2",
+    "font-awesome": "^4.7.0",
+    "hiredis": "^0.5.0",
+    "jade": "^1.11.0",
+    "jquery": "^3.2.1",
+    "jsrender": "^0.9.89",
+    "morgan": "~1.9.0",
+    "node-sass-middleware": "0.9.8",
+    "popper.js": "^1.12.6",
+    "redis": "^2.8.0",
+    "serve-favicon": "~2.4.5"
+  },
+  "devDependencies": {
+    "mocha": "^4.0.1",
+    "supertest": "^3.0.0"
+  }
+}

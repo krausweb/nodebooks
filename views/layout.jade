@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons")
+    link(rel='stylesheet', href='/stylesheets/bootstrap-material-design.min.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body.py-md-4.px-md-3
+    div.container-fluid
+      div.row.flex-xl-nowrap.justify-content-center
+        div.col-12.col-md-10.col-xl-10.py-md-3
+
+          block content
+
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/popper.min.js')
+    script(src='/javascripts/bootstrap-material-design.min.js')
+    script(src='/javascripts/jsrender.min.js')
+    script(src='/javascripts/main.js')
